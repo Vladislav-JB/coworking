@@ -71,7 +71,7 @@ export default function Admin() {
               <div key={d.key} className={d.fut ? "fut" : ""} style={{ height: `${(d.sum / maxDay) * 100}%` }} data-t={`${d.label}: ${rub(d.sum)}`} />
             ))}
           </div>
-          <div className="axis"><span>{days[0]?.label}</span><span>сегодня</span><span>{days[days.length - 1]?.label}</span></div>
+          <div className="axis"><span>{days[0]?.label}</span><span>светлые столбцы – будущие брони</span><span>{days[days.length - 1]?.label}</span></div>
         </div>
         <div className="panel">
           <h3 style={{ marginBottom: 14 }}>Загрузка за 30 дней</h3>

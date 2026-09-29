@@ -41,7 +41,7 @@ export type Booking = {
   status: "new" | "confirmed" | "cancelled";
 };
 
-const KEY = "cw-bookings-v1";
+const KEY = "cw-bookings-v2";
 
 export const ymd = (d: Date) =>
   `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -72,7 +72,7 @@ function seed(): Booking[] {
             name: names[Math.floor(rnd() * names.length)],
             phone: "+7 (900) 000-00-00",
             created: d.getTime() - 86400000 * (1 + Math.floor(rnd() * 5)),
-            status: off < 0 ? "confirmed" : rnd() < 0.3 ? "new" : "confirmed",
+            status: off < 0 || off > 3 ? "confirmed" : rnd() < 0.15 ? "new" : "confirmed",
           });
           h += hours + 1;
         } else h += 1;
