@@ -14,6 +14,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ru">
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@1,700&display=swap" rel="stylesheet" />
+      </head>
       <body className={manrope.variable}>
         <header className="hdr">
           <div className="wrap hdr__in">
@@ -30,6 +33,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <b>Коворкинг «Этаж»</b>
               <p>Ежедневно 8:00–23:00 · +7 (900) 000-00-00</p>
             </div>
+            <span className="foot__made">
+              Создан в <a href="http://web-atelie.ru/" target="_blank" rel="noopener">«Веб-Ателье»</a>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/coworking/web-atelie.png" alt="" width={40} height={52} loading="lazy" decoding="async" />
+            </span>
             <nav>
               <Link href="/spaces/">Пространства</Link>
               <Link href="/booking/">Бронирование</Link>
@@ -37,7 +45,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <Link href="/contacts/">Контакты</Link>
               <Link href="/admin/">Админка (демо)</Link>
             </nav>
-            <p className="ftr__demo">Демо-сайт на Next.js: название, цены и брони условные. Брони хранятся только в вашем браузере.</p>
+            <p className="ftr__demo">Демо-концепт сайта коворкинга на Next.js. Название, цены и брони условные, брони хранятся только в вашем браузере.</p>
           </div>
         </footer>
       </body>
